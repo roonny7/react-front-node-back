@@ -14,11 +14,12 @@ import simpleRestProvider from 'ra-data-simple-rest';
 
 //<Admin dashboard={Dashboard} dataProvider={simpleRestProvider('http://localho.st:4000/api/usuarios/buscar')} >
 //const dataProvider = jsonServerProvider('https://jsonplaceholder.typicode.com');
+//<Resource name="users2" list={UserList} icon={UserIcon} />
 const App = () => (
   
     <Admin dashboard={Dashboard} dataProvider={dataProvider} >
-      <Resource name="posts" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
-      <Resource name="users" list={UserList} icon={UserIcon} />
+      <Resource name="users" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
+      
       
   </Admin>
 );

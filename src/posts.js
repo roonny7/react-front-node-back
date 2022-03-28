@@ -27,7 +27,14 @@ const postFilters = [
 
 
 const PostTitle = ({ record }) => {
-        return <span>Post {record ? `"${record.title}"` : ''}</span>;
+       let titulo;
+       if (record.Nombre) titulo = record.Nombre;
+       else if (record.Descripcion)
+            titulo=record.Nombre;
+        else
+            titulo = record.title;
+            
+        return <span>Editando a :  {record ? `"${titulo}"` : ''}</span>;
 };
 
 export const PostList = (props) => {
@@ -57,27 +64,26 @@ export const PostList = (props) => {
 }
 
 export const PostEdit = props => (
+     
     <Edit title={<PostTitle />} {...props}>
-        <SimpleForm>
-            <TextInput disabled source="id" />
-            <ReferenceInput source="userId" reference="users">
-                <SelectInput optionText="name" />
-            </ReferenceInput>
-            <TextInput source="id" />
-            <TextInput source="title" />
-            <TextInput multiline source="body" />
+        <SimpleForm>            
+            <TextInput disabled source="id" />            
+            <TextInput source="Usuario" />
+            <TextInput source="Nombre" />
+            <TextInput source="Password" />
+            <TextInput source="Tipo" />
         </SimpleForm>
     </Edit>
+    
 );
 
 export const PostCreate = props => (
         <Create {...props}>
             <SimpleForm>
-                <ReferenceInput source="userId" reference="users">
-                    <SelectInput optionText="name" />
-                </ReferenceInput>
-                <TextInput source="title" />
-                <TextInput multiline source="body" />
+                <TextInput source="Usuario" isRequired />
+                <TextInput required source="Tipo" />
+                <TextInput required source="Nombre" />
+                <TextInput required source="Password" />
             </SimpleForm>
         </Create>
     );

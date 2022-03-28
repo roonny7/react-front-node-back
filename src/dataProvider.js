@@ -1,7 +1,7 @@
 import { fetchUtils } from 'react-admin';
 import { stringify } from 'query-string';
 
-const apiUrl = 'http://localho.st:4000/api/usuarios/buscar';
+const apiUrl = 'http://localho.st:4000/api';
 const httpClient = fetchUtils.fetchJson;
 
 export default {
@@ -75,8 +75,12 @@ export default {
             body: JSON.stringify(params.data),
         }).then(({ json }) => ({
             data: { ...params.data, id: json.id },
-        })),
-
+            
+            
+        })
+        
+        ),
+        
     delete: (resource, params) =>
         httpClient(`${apiUrl}/${resource}/${params.id}`, {
             method: 'DELETE',
