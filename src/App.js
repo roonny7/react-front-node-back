@@ -19,6 +19,7 @@ const App = () => (
   
     <Admin dashboard={Dashboard} dataProvider={dataProvider} >
       <Resource name="users" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
+      <Resource name="empleados" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
       
       
   </Admin>

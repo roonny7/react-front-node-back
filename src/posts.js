@@ -81,7 +81,7 @@ export const PostCreate = props => (
         <Create {...props}>
             <SimpleForm>
                 <TextInput source="Usuario" isRequired />
-                <TextInput required source="Tipo" />
+                <TextInput required source="Tipo"  maxLength={1} maxlength={1}/>
                 <TextInput required source="Nombre" />
                 <TextInput required source="Password" />
             </SimpleForm>
