@@ -1,6 +1,7 @@
 import * as React from "react";
 import { Admin, Resource } from 'react-admin';
 import { PostList, PostEdit, PostCreate } from './posts';
+import { NivelesList, NivelEdit, NivelCreate } from "./niveles";
 import { UserList } from './users';
 //import jsonServerProvider from 'ra-data-json-server';
 import PostIcon from '@material-ui/icons/Book';
@@ -19,7 +20,7 @@ const App = () => (
   
     <Admin dashboard={Dashboard} dataProvider={dataProvider} >
       <Resource name="users" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
-      <Resource name="empleados" list={PostList} edit={PostEdit} create={PostCreate} icon={PostIcon} />
+      <Resource name="niveles" list={NivelesList} edit={NivelEdit} create={NivelCreate} icon={PostIcon} />
       
       
   </Admin>
